@@ -75,6 +75,7 @@
         # delete the fingerprint every time we reinstall them.
         issh = "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";
         iscp = "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";
+        yocto-nix-env = "nix develop github:OSSystems/yocto-env.nix";
       };
     };
 
