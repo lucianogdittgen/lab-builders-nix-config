@@ -28,6 +28,7 @@
   home-manager.users.luciano = {
     imports = [
       ../rodrigo/features/claude-code
+      ./features/claude-code
     ];
 
     home = {
