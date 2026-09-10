@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 
 {
   imports =
@@ -13,6 +13,9 @@
       ../features/zram-swap.nix
       ./partitioning.nix
     ];
+
+  # Keep upstream automatic upgrades from replacing this host's local configuration.
+  system.autoUpgrade.enable = lib.mkForce false;
 
   boot = {
     loader = {
