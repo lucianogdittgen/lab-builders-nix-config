@@ -6,12 +6,12 @@ _:
     pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
       (_: pythonPrev: {
         oelint-parser = pythonPrev.oelint-parser.overridePythonAttrs {
-          version = "8.12.3";
+          version = "8.13.0";
           src = prev.fetchFromGitHub {
             owner = "priv-kweihmann";
             repo = "oelint-parser";
-            tag = "8.12.3";
-            hash = "sha256-8GnbfMX9RedPgvDHkzejkPVSEfhdKAryPRJIT+hNCxk=";
+            tag = "8.13.0";
+            hash = "sha256-aIR/ettY2t7H5oY2+vkReminpxJdPjtRZ74DxPxEs7Y=";
           };
         };
       })
