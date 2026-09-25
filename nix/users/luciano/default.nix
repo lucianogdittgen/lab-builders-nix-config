@@ -29,6 +29,14 @@
       ];
       home = {
         packages = with pkgs; [
+          (writeShellApplication {
+            name = "claude-statusline";
+            runtimeInputs = [
+              git
+              jq
+            ];
+            text = builtins.readFile ./claude-statusline.sh;
+          })
           bintools
           fd
           gitRepo
