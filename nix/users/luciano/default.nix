@@ -38,6 +38,7 @@
             text = builtins.readFile ./claude-statusline.sh;
           })
           bintools
+          fastfetch
           fd
           gitRepo
           htop
