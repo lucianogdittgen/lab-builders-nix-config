@@ -43,6 +43,7 @@
           htop
           jq
           kas
+          lm_sensors
           nerd-fonts.meslo-lg
           nmap
           oelint-adv
