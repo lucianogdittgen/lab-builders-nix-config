@@ -1,5 +1,12 @@
 { inputs, pkgs, ... }:
 
+let
+  # Pin the Gerrit host key; new keys still go to ~/.ssh/known_hosts.
+  ossystemsKnownHosts = "~/.ssh/known_hosts ${pkgs.writeText "ossystems-known-hosts" ''
+    code.ossystems.com.br ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEuYMEsxb/vUK2pjKNGUxC8IOybodwNPxvPLWyDSPYAz
+    [code.ossystems.io]:29418 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEuYMEsxb/vUK2pjKNGUxC8IOybodwNPxvPLWyDSPYAz
+  ''}";
+in
 {
   users.users.luciano = {
     description = "Luciano Dittgen";
@@ -136,6 +143,11 @@
             "*.ossystems.com.br" = {
               HostkeyAlgorithms = "+ssh-rsa";
               PubkeyAcceptedAlgorithms = "+ssh-rsa";
+              UserKnownHostsFile = ossystemsKnownHosts;
+            };
+            # Git rewrites code.ossystems.com.br URLs to this host.
+            "code.ossystems.io" = {
+              UserKnownHostsFile = ossystemsKnownHosts;
             };
             "*.lab.ossystems" = {
               ForwardAgent = true;
