@@ -89,6 +89,8 @@ in
             # delete the fingerprint every time we reinstall them.
             issh = "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";
             iscp = "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";
+            # Claude Code with my personal account, without the company proxy.
+            claude-personal = "env -u ANTHROPIC_BASE_URL -u ANTHROPIC_AUTH_TOKEN CLAUDE_CONFIG_DIR=$HOME/.claude-personal claude";
           };
         };
         emacs = {
