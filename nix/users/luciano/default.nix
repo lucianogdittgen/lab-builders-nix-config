@@ -45,6 +45,7 @@ in
             text = builtins.readFile ./claude-statusline.sh;
           })
           bintools
+          dmidecode
           fastfetch
           fd
           gitRepo
