@@ -131,7 +131,7 @@ in
           settings = {
             user = {
               name = "Luciano Dittgen";
-              email = "luciano.dittgen@ossystems.com.br";
+              email = "luciano.dittgen@ossystems.tech";
             };
             core = {
               sshCommand = "${pkgs.openssh}/bin/ssh -F ~/.ssh/config";
